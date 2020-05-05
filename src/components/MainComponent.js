@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, NavbarBrand } from "reactstrap";
 import Directory from "./DirectoryComponent";
+import About from "./AboutComponent";
 import { CAMPSITES } from "../shared/campsite";
 import CampsiteInfo from "./CampsiteInfoComponent";
 import Header from "./HeaderComponent";
@@ -65,6 +66,11 @@ class Main extends React.Component {
           />
           <Route exact path="/contactus" component={Contact} />
           <Route path="/directory/:campsiteId" component={CampsiteWithId} />
+          <Route
+            exact
+            path="/aboutus"
+            render={() => <About partners={this.state.partners} />}
+          />
           <Redirect to="/home" />
         </Switch>
         <Footer />
